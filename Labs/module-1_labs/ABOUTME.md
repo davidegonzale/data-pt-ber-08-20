@@ -8,6 +8,8 @@ I am a business operations and data science enthusiast who loves working with di
 
 [Link](https://www.linkedin.com/in/davidegonzale/)
 
+** This is my conflict branch
+
 
 
 
