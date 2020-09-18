@@ -14,6 +14,10 @@ Run your first SQL commands! In this lab, we will practice selecting and project
 
 Please submit your solutions in a text file `solutions.sql`.
 
+## Loading the data
+
+You can use the mysql dump file in the initdb folder to load the dataset into your existing MySQL database. It will create a new database called "bank".
+
 ## Challenge:
 
 Assume that any `_id` columns are incremental, meaning that higher ids always occured after lower ids. For example, a client with a higher `client_id` joined the bank after a client with a lower `client_id`.

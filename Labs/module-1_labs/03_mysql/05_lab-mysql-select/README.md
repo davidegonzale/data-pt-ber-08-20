@@ -6,17 +6,19 @@
 
 In this lab you will practice how to use the MySQL `SELECT` statement which will be extremely useful in your future work as a data analyst/scientist/engineer. **You will use the `publications` database that we used in the *Joins and Relationships* lesson.** In case you haven't had that database, [here](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/data-static/data/module-1/publications.sql.zip) is the link to download the database file.  If you have issues with the encoding, try first to edit the sql or text file by using find and replace all occurences of utf8mb4_0900_ai_ci with utf8mb4_unicode_ci.
 
-Step-by-Step Instructions:
-
-Download publications.sql.zip.
-Unzip the downloaded file and extract the database dump file on your machine.
-Create a new database called "publications" by running the following command: CREATE DATABASE publications;.
-From the Select Database dropdown menu on the upper left, select the publications database.
-From the top menu, select File and then the Import menu option.
-Navigate to the publications.sql dump file and import it.
-You should now see the database tables listed under TABLES in the left sidebar listed.
-
 You will create a `solutions.sql` file in the `your-code` directory to record your solutions to all challenges.
+
+
+## Challenge 0
+
+In this challenge we will practice joining the different tables of the publications database.
+
+a) Create a table which for each author contains their author id, first name, last name, and the total number of titles they have written according to the titleauthor table. Give each variable an alias, such that the table output is easy to read and interpret.
+
+Are there any authors in the author table, that do not have any publications in the titleauthor table?
+
+b) Create a table which for each job description contains the first hire date (i.e. the first employee with this job id was hired). Again, name the columns properly to have a nice return table. Sort the results from the job description with the first hire to the one with the last hire.
+
 
 ## Challenge 1 - Who Have Published What At Where?
 
