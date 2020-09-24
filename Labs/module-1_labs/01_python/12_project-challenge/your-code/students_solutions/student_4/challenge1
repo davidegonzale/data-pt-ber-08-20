@@ -1,0 +1,546 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge A: Password Validator\n",
+    "\n",
+    "#### Description\n",
+    "Your job is to create a simple password validation function, as seen on many websites.\n",
+    "\n",
+    "The rules for a valid password are as follows:\n",
+    "\n",
+    "There needs to be at least 1 uppercase letter.\n",
+    "There needs to be at least 1 lowercase letter.\n",
+    "There needs to be at least 1 number.\n",
+    "The password needs to be at least 8 characters long.\n",
+    "\n",
+    "*You are permitted to use any methods to validate the password.*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 27,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import re\n",
+    "from collections import Counter\n",
+    "import numpy as np\n",
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 215,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def password():\n",
+    "    while True:\n",
+    "        a = input(\"Create a password with at least 8 characters, 1 lowercase, 1 uppercase and 1 digit: \")\n",
+    "        upper,lower,digit = 0,0,0\n",
+    "        for x in range(len(a)):\n",
+    "            if a[x].isupper():\n",
+    "                upper += 1\n",
+    "            elif a[x].islower():\n",
+    "                lower += 1\n",
+    "            elif a[x].isdigit():\n",
+    "                digit += 1\n",
+    "            else:\n",
+    "                pass\n",
+    "        if (upper >= 1 and lower >= 1 and len(a) == 8 and digit >= 1):\n",
+    "            print(\"The password is valid\")\n",
+    "            break"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 214,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Create a password with at least 8 characters, 1 lowercase, 1 uppercase and 1 digit: Ab123456\n",
+      "The password is valid\n"
+     ]
+    }
+   ],
+   "source": [
+    "password()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge B: Credit Card Validator\n",
+    "\n",
+    "#### Description\n",
+    "\n",
+    "Your task is to write a program which reads credit card number prints the validation result ‘Valid’ or ‘Invalid’.\n",
+    "\n",
+    "A valid credit card has following features:\n",
+    "\n",
+    "- It should start with 4, 5 or 6\n",
+    "- It should have exactly 16 digits\n",
+    "- It should only consist of digits (0-9)\n",
+    "- It may have digits in groups of 4 and separated by one hyphen \"-\"\n",
+    "- It should NOT use any other separator like ‘ ’,‘_’, etc.\n",
+    "- It should NOT have 4 or more consecutive repeated digits\n",
+    "\n",
+    "Valid Credit Card Numbers:\n",
+    "1. 4263525778615786\n",
+    "2. 5535535535559555\n",
+    "3. 6344-2389-7542-9163\n",
+    "\n",
+    "Invalid Credit Card Numbers:\n",
+    "1. 42536258796157867       \n",
+    "2. 66266666626662666       \n",
+    "3. 5122-2368-7954 -3214   \n",
+    "4. 44244x4424442444       \n",
+    "5. 0525362587961578"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 212,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#It should start with 4, 5 or 6\n",
+    "#It should have exactly 16 digits\n",
+    "#It should only consist of digits (0-9)\n",
+    "#It may have digits in groups of 4 and separated by one hyphen \"-\"\n",
+    "#It should NOT use any other separator like ‘ ’,‘_’, etc.\n",
+    "#It should NOT have 4 or more consecutive repeated digits\n",
+    "\n",
+    "def valid():\n",
+    "    while True:\n",
+    "        a = input(\"Credit Card Number: \")\n",
+    "        ch = '\"''!@#$%^&*()_=+,<.>/?;:[{]}~`\\|'\n",
+    "        ch_list = list(\"\".join(ch))\n",
+    "        a_list = list(\"\".join(a))\n",
+    "        regex = [str(x)*4 for x in range(10)] + [str(x)*2+\"-\"+str(x)*2 for x in range(10)]\n",
+    "        res = [x for x in regex if(x in a)]\n",
+    "        if (a.startswith((\"4\",\"5\",\"6\")) == True and len(re.findall(\"[0-9]\",a)) == 16 and (len(a) == 16 or len(a) == 19)) and set(a_list).intersection(set(ch_list)) == set() and len(res) == 0:\n",
+    "            print(\"Card Number is Valid\")\n",
+    "            break"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 209,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Credit Card Number: 4444-1234-4568-1234\n",
+      "Credit Card Number: 4444725845681234\n",
+      "Credit Card Number: 1234-5687-1236-4789\n",
+      "Credit Card Number: 12367-125-3546-7473\n",
+      "Credit Card Number: 4789-1235-4786-1234\n",
+      "Card Number is Valid\n"
+     ]
+    }
+   ],
+   "source": [
+    "valid()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge C: Multiplication Table\n",
+    "\n",
+    "#### Description\n",
+    "    \n",
+    "Your task, is to create a function which returns a **NxN multiplication table**, of size N provided as a function argument.\n",
+    "\n",
+    "for example, when given size is 3:\n",
+    "\n",
+    "1 2 3\n",
+    "\n",
+    "2 4 6\n",
+    "\n",
+    "3 6 9\n",
+    "\n",
+    "So for the given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge D: ID Assignment\n",
+    "\n",
+    "#### Description\n",
+    "\n",
+    "a) You work in a company with 100 people - to start, please create a list of people ranging from Person 1 to Person 100. For company purposes, each of these people is identified with a Personal ID, which is a combination of 2 uppercase letters and a random number of 5 digits. For each person, generate a random ID, and store it in a dictionary alongside their name (for example ('Person 5': 'AB73648')). Then sort the dictionary according to the values of their Personal IDs.\n",
+    "\n",
+    "b) One month later, your company changes the ID format for every employee - from now on, every person will have an ID that consists of only letters. In order to convert them, every number in the employee ID should be replaced by the corresponding uppercase letter in the alphabeth. Please write a function that accomplishes this change and apply it to the dictionary."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 119,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import random #import the package\n",
+    "\n",
+    "person = [(lambda x: \"Person \" + str(x))(x) for x in range (1,101)] #create the list"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 120,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# create the random numbers\n",
+    "number_generator = [] #empty list for numbers\n",
+    "for x in range(100):\n",
+    "    number_generator.append(random.randrange(10000,100000)) #random.randrange"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 121,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# turn numbers into strings\n",
+    "number = []\n",
+    "for x in number_generator:\n",
+    "    number.append(str(x))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 122,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# create the string list and make them upper\n",
+    "string = \"abcdefghijklmnopqrstuvwxyz\"\n",
+    "string = (\",\").join(string)\n",
+    "string = string.split(\",\")\n",
+    "str_upper = []\n",
+    "for y in string:\n",
+    "    str_upper.append(y.upper())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 123,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# create the random letters\n",
+    "str_id = []\n",
+    "for z in range(101):\n",
+    "    str_id.append(random.choice(str_upper)+random.choice(str_upper)) # there might be duplicate values in strings"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 124,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# concat the numbers and strings\n",
+    "ids = [a + b for a, b in zip(str_id, number)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 125,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Person 29': 'AH81270', 'Person 97': 'AT16698', 'Person 41': 'AU95931', 'Person 23': 'BB83959', 'Person 81': 'BD56313', 'Person 15': 'BM87483', 'Person 38': 'CA42514', 'Person 63': 'CC93690', 'Person 80': 'CD26745', 'Person 70': 'CM78086', 'Person 65': 'CO11367', 'Person 90': 'CS60423', 'Person 40': 'DD11441', 'Person 3': 'DD89317', 'Person 72': 'DI13318', 'Person 100': 'DM80325', 'Person 8': 'DQ13574', 'Person 78': 'DY21141', 'Person 17': 'EQ54585', 'Person 92': 'FM59406', 'Person 26': 'FU97706', 'Person 82': 'GF93788', 'Person 42': 'GP74646', 'Person 87': 'GR71222', 'Person 51': 'GR77268', 'Person 89': 'GY45624', 'Person 96': 'HL47422', 'Person 39': 'HO85823', 'Person 34': 'HT42655', 'Person 49': 'HT87941', 'Person 64': 'HY79296', 'Person 33': 'ID94358', 'Person 53': 'IV89937', 'Person 91': 'IZ31222', 'Person 46': 'JC23042', 'Person 98': 'JN36659', 'Person 75': 'JY24253', 'Person 20': 'KA86779', 'Person 76': 'KK81905', 'Person 55': 'KP30125', 'Person 85': 'KU18105', 'Person 2': 'LG55172', 'Person 48': 'LS29593', 'Person 77': 'MJ60729', 'Person 93': 'MW82954', 'Person 71': 'NB17165', 'Person 6': 'NC63956', 'Person 21': 'NF91910', 'Person 50': 'NI13925', 'Person 79': 'NQ87092', 'Person 86': 'NR53868', 'Person 18': 'NW76800', 'Person 36': 'NW81180', 'Person 83': 'OE26087', 'Person 58': 'OF53674', 'Person 1': 'OQ82407', 'Person 45': 'PO88621', 'Person 35': 'PP86756', 'Person 27': 'PY13141', 'Person 24': 'QE41546', 'Person 67': 'QF44453', 'Person 30': 'QK85996', 'Person 4': 'QM91661', 'Person 14': 'RF16283', 'Person 73': 'RJ41494', 'Person 95': 'RJ47765', 'Person 88': 'RQ60676', 'Person 11': 'RY91607', 'Person 61': 'SH43491', 'Person 44': 'SL44997', 'Person 57': 'SY47576', 'Person 9': 'TD49692', 'Person 13': 'TX77030', 'Person 7': 'TZ83793', 'Person 99': 'UB57798', 'Person 10': 'UG31274', 'Person 69': 'UJ71524', 'Person 31': 'UL48398', 'Person 25': 'VO68118', 'Person 59': 'VR30780', 'Person 54': 'VS49029', 'Person 28': 'WB43027', 'Person 68': 'WD27064', 'Person 37': 'WH12996', 'Person 32': 'WZ61468', 'Person 19': 'XB68237', 'Person 74': 'XF87376', 'Person 56': 'XM88365', 'Person 47': 'XQ11180', 'Person 12': 'XQ53534', 'Person 66': 'XT55062', 'Person 60': 'XU49115', 'Person 84': 'XZ17305', 'Person 94': 'YJ83414', 'Person 52': 'YK43224', 'Person 43': 'YP30585', 'Person 22': 'YZ10110', 'Person 16': 'ZB40054', 'Person 62': 'ZB77762', 'Person 5': 'ZI28150'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "# dictionary and sort\n",
+    "\n",
+    "ids_dict = dict(zip(person,ids))\n",
+    "ids_dict = dict(sorted(ids_dict.items(), key= lambda x: x[1]))\n",
+    "print(ids_dict)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "**One month later**\n",
+    "\n",
+    "-probably there is fancier way of doing this"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 216,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# create the alphabet dictionary \n",
+    "numbers_range = [str(x) for x in range(len(str_upper))]\n",
+    "alphabet = dict(zip(numbers_range,str_upper))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 123,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 217,
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Person</th>\n",
+       "      <th>ID</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Person 29</td>\n",
+       "      <td>AH81270</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Person 97</td>\n",
+       "      <td>AT16698</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Person 41</td>\n",
+       "      <td>AU95931</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Person 23</td>\n",
+       "      <td>BB83959</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Person 81</td>\n",
+       "      <td>BD56313</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "      Person       ID\n",
+       "0  Person 29  AH81270\n",
+       "1  Person 97  AT16698\n",
+       "2  Person 41  AU95931\n",
+       "3  Person 23  BB83959\n",
+       "4  Person 81  BD56313"
+      ]
+     },
+     "execution_count": 217,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# create a df\n",
+    "df = pd.DataFrame(ids_dict.items(),columns = [\"Person\",\"ID\"])\n",
+    "df.head()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 218,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# get the sorted dictionariey values and keys\n",
+    "list_numbers = list(ids_dict.values())\n",
+    "list_keys = list(ids_dict.keys())"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 219,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# extract the numbers of sorted list and get the each number\n",
+    "sorted_numbers = [x[2:] for x in list_numbers]\n",
+    "sorted_strings = [x[:2] for x in list_numbers]\n",
+    "list_0 = []\n",
+    "list_1 = []\n",
+    "list_2 = []\n",
+    "list_3 = []\n",
+    "list_4 = []\n",
+    "\n",
+    "for x in sorted_numbers:\n",
+    "    list_0.append(x[0])\n",
+    "    list_1.append(x[1])\n",
+    "    list_2.append(x[2])\n",
+    "    list_3.append(x[3])\n",
+    "    list_4.append(x[4])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 220,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[\"list0\"] = list_0\n",
+    "df[\"list1\"] = list_1\n",
+    "df[\"list2\"] = list_2\n",
+    "df[\"list3\"] = list_3\n",
+    "df[\"list4\"] = list_4"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 221,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df[\"list0\"] = df[\"list0\"].map(alphabet)\n",
+    "df[\"list1\"] = df[\"list1\"].map(alphabet)\n",
+    "df[\"list2\"] = df[\"list2\"].map(alphabet)\n",
+    "df[\"list3\"] = df[\"list3\"].map(alphabet)\n",
+    "df[\"list4\"] = df[\"list4\"].map(alphabet)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 222,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "list0 = list(df[\"list0\"])\n",
+    "list1 = list(df[\"list1\"])\n",
+    "list2 = list(df[\"list2\"])\n",
+    "list3 = list(df[\"list3\"])\n",
+    "list4 = list(df[\"list4\"])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 223,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "numbers_to_string = [a+b+c+d+e for a,b,c,d,e in zip(list0,list1,list2,list3,list4)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 224,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "new_ids = [a + b for a, b in zip(sorted_strings, numbers_to_string)]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 225,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "{'Person 29': 'AHIBCHA', 'Person 97': 'ATBGGJI', 'Person 41': 'AUJFJDB', 'Person 23': 'BBIDJFJ', 'Person 81': 'BDFGDBD', 'Person 15': 'BMIHEID', 'Person 38': 'CAECFBE', 'Person 63': 'CCJDGJA', 'Person 80': 'CDCGHEF', 'Person 70': 'CMHIAIG', 'Person 65': 'COBBDGH', 'Person 90': 'CSGAECD', 'Person 40': 'DDBBEEB', 'Person 3': 'DDIJDBH', 'Person 72': 'DIBDDBI', 'Person 100': 'DMIADCF', 'Person 8': 'DQBDFHE', 'Person 78': 'DYCBBEB', 'Person 17': 'EQFEFIF', 'Person 92': 'FMFJEAG', 'Person 26': 'FUJHHAG', 'Person 82': 'GFJDHII', 'Person 42': 'GPHEGEG', 'Person 87': 'GRHBCCC', 'Person 51': 'GRHHCGI', 'Person 89': 'GYEFGCE', 'Person 96': 'HLEHECC', 'Person 39': 'HOIFICD', 'Person 34': 'HTECGFF', 'Person 49': 'HTIHJEB', 'Person 64': 'HYHJCJG', 'Person 33': 'IDJEDFI', 'Person 53': 'IVIJJDH', 'Person 91': 'IZDBCCC', 'Person 46': 'JCCDAEC', 'Person 98': 'JNDGGFJ', 'Person 75': 'JYCECFD', 'Person 20': 'KAIGHHJ', 'Person 76': 'KKIBJAF', 'Person 55': 'KPDABCF', 'Person 85': 'KUBIBAF', 'Person 2': 'LGFFBHC', 'Person 48': 'LSCJFJD', 'Person 77': 'MJGAHCJ', 'Person 93': 'MWICJFE', 'Person 71': 'NBBHBGF', 'Person 6': 'NCGDJFG', 'Person 21': 'NFJBJBA', 'Person 50': 'NIBDJCF', 'Person 79': 'NQIHAJC', 'Person 86': 'NRFDIGI', 'Person 18': 'NWHGIAA', 'Person 36': 'NWIBBIA', 'Person 83': 'OECGAIH', 'Person 58': 'OFFDGHE', 'Person 1': 'OQICEAH', 'Person 45': 'POIIGCB', 'Person 35': 'PPIGHFG', 'Person 27': 'PYBDBEB', 'Person 24': 'QEEBFEG', 'Person 67': 'QFEEEFD', 'Person 30': 'QKIFJJG', 'Person 4': 'QMJBGGB', 'Person 14': 'RFBGCID', 'Person 73': 'RJEBEJE', 'Person 95': 'RJEHHGF', 'Person 88': 'RQGAGHG', 'Person 11': 'RYJBGAH', 'Person 61': 'SHEDEJB', 'Person 44': 'SLEEJJH', 'Person 57': 'SYEHFHG', 'Person 9': 'TDEJGJC', 'Person 13': 'TXHHADA', 'Person 7': 'TZIDHJD', 'Person 99': 'UBFHHJI', 'Person 10': 'UGDBCHE', 'Person 69': 'UJHBFCE', 'Person 31': 'ULEIDJI', 'Person 25': 'VOGIBBI', 'Person 59': 'VRDAHIA', 'Person 54': 'VSEJACJ', 'Person 28': 'WBEDACH', 'Person 68': 'WDCHAGE', 'Person 37': 'WHBCJJG', 'Person 32': 'WZGBEGI', 'Person 19': 'XBGICDH', 'Person 74': 'XFIHDHG', 'Person 56': 'XMIIDGF', 'Person 47': 'XQBBBIA', 'Person 12': 'XQFDFDE', 'Person 66': 'XTFFAGC', 'Person 60': 'XUEJBBF', 'Person 84': 'XZBHDAF', 'Person 94': 'YJIDEBE', 'Person 52': 'YKEDCCE', 'Person 43': 'YPDAFIF', 'Person 22': 'YZBABBA', 'Person 16': 'ZBEAAFE', 'Person 62': 'ZBHHHGC', 'Person 5': 'ZICIBFA'}\n"
+     ]
+    }
+   ],
+   "source": [
+    "converted_ids = dict(zip(list_keys,new_ids))\n",
+    "print(converted_ids)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}

@@ -1,0 +1,522 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge A: Password Validator (completed)\n",
+    "\n",
+    "#### Description\n",
+    "Your job is to create a simple password validation function, as seen on many websites.\n",
+    "\n",
+    "The rules for a valid password are as follows:\n",
+    "\n",
+    "There needs to be at least 1 uppercase letter.\n",
+    "There needs to be at least 1 lowercase letter.\n",
+    "There needs to be at least 1 number.\n",
+    "The password needs to be at least 8 characters long.\n",
+    "\n",
+    "*You are permitted to use any methods to validate the password.*"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "import numpy as np\n",
+    "from functools import reduce\n",
+    "import re\n",
+    "import random\n",
+    "import string"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 39,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Kate12233\n",
+      "['1', '2', '2', '3', '3']\n",
+      "['K']\n",
+      "['a', 't', 'e']\n",
+      "Password accepted.\n"
+     ]
+    }
+   ],
+   "source": [
+    "# your code here\n",
+    "\n",
+    "password = input()\n",
+    "\n",
+    "def validate(x):\n",
+    "    if len(x) < 8:\n",
+    "        return print(\"Your password needs to be at least 8 characters long.\")\n",
+    "    for i in x:\n",
+    "        num = re.findall('[\\d]', x) \n",
+    "        print(num)\n",
+    "        upper = re.findall('[A-Z]', x)\n",
+    "        print(upper)\n",
+    "        lower = re.findall('[a-z]',x)\n",
+    "        print(lower)\n",
+    "         \n",
+    "        if (not num ==[]) and (upper !=[]) and (lower !=[]):\n",
+    "            return print(\"Password accepted.\")\n",
+    "        \n",
+    "        elif (num==[]) or (upper==[]) or (lower==[]):\n",
+    "            return print(\"Password not accepted. Please include at least one uppercase character, one lowercase character, and one number.\")\n",
+    "\n",
+    "\n",
+    "validate(password)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Help on method_descriptor:\n",
+      "\n",
+      "count(...)\n",
+      "    S.count(sub[, start[, end]]) -> int\n",
+      "    \n",
+      "    Return the number of non-overlapping occurrences of substring sub in\n",
+      "    string S[start:end].  Optional arguments start and end are\n",
+      "    interpreted as in slice notation.\n",
+      "\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "False"
+      ]
+     },
+     "execution_count": 3,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "help(str.count)\n",
+    "\n",
+    "[5]!=[]\n",
+    "[5]==[]\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge B: Credit Card Validator\n",
+    "\n",
+    "#### Description\n",
+    "\n",
+    "Your task is to write a program which reads credit card number prints the validation result ‘Valid’ or ‘Invalid’.\n",
+    "\n",
+    "A valid credit card has following features:\n",
+    "\n",
+    "- It should start with 4, 5 or 6\n",
+    "- It should have exactly 16 digits\n",
+    "- It should only consist of digits (0-9)\n",
+    "- It may have digits in groups of 4 and separated by one hyphen \"-\"\n",
+    "- It should NOT use any other separator like ‘ ’,‘_’, etc.\n",
+    "- It should NOT have 4 or more consecutive repeated digits\n",
+    "\n",
+    "Valid Credit Card Numbers:\n",
+    "1. 4263525778615786\n",
+    "2. 5535535535559555\n",
+    "3. 6344-2389-7542-9163\n",
+    "\n",
+    "Invalid Credit Card Numbers:\n",
+    "1. 42536258796157867       \n",
+    "2. 66266666626662666       \n",
+    "3. 5122-2368-7954 -3214   \n",
+    "4. 44244x4424442444       \n",
+    "5. 0525362587961578"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# your code here \n",
+    "# Didnt attempt this challenge"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge C: Multiplication Table (completed)\n",
+    "\n",
+    "#### Description\n",
+    "    \n",
+    "Your task, is to create a function which returns a **NxN multiplication table**, of size N provided as a function argument.\n",
+    "\n",
+    "for example, when given size is 3:\n",
+    "\n",
+    "1 2 3\n",
+    "\n",
+    "2 4 6\n",
+    "\n",
+    "3 6 9\n",
+    "\n",
+    "So for the given example, the return value should be: [[1,2,3],[2,4,6],[3,6,9]]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 31,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "10\n"
+     ]
+    },
+    {
+     "data": {
+      "text/plain": [
+       "array([[  1.,   2.,   3.,   4.,   5.,   6.,   7.,   8.,   9.,  10.],\n",
+       "       [  2.,   4.,   6.,   8.,  10.,  12.,  14.,  16.,  18.,  20.],\n",
+       "       [  3.,   6.,   9.,  12.,  15.,  18.,  21.,  24.,  27.,  30.],\n",
+       "       [  4.,   8.,  12.,  16.,  20.,  24.,  28.,  32.,  36.,  40.],\n",
+       "       [  5.,  10.,  15.,  20.,  25.,  30.,  35.,  40.,  45.,  50.],\n",
+       "       [  6.,  12.,  18.,  24.,  30.,  36.,  42.,  48.,  54.,  60.],\n",
+       "       [  7.,  14.,  21.,  28.,  35.,  42.,  49.,  56.,  63.,  70.],\n",
+       "       [  8.,  16.,  24.,  32.,  40.,  48.,  56.,  64.,  72.,  80.],\n",
+       "       [  9.,  18.,  27.,  36.,  45.,  54.,  63.,  72.,  81.,  90.],\n",
+       "       [ 10.,  20.,  30.,  40.,  50.,  60.,  70.,  80.,  90., 100.]])"
+      ]
+     },
+     "execution_count": 31,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# your code here\n",
+    "\n",
+    "# input is array of shape NxN\n",
+    "# return a list of range, then a list of 2*range, then a list of 3*range, etc. \n",
+    "\n",
+    "n = int(input())\n",
+    "\n",
+    "def mult_table():\n",
+    "   \n",
+    "    a = np.ones([n,n])\n",
+    "    for i in range(0, n):\n",
+    "        a[i] = np.arange(1, n+1)*(i+1)\n",
+    "    return a\n",
+    "\n",
+    "mult_table()   \n",
+    "\n",
+    "             "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "### failed attempts dump:\n",
+    "\n",
+    "# a = np.arange(1, n+1)\n",
+    "#     for item in range(1, n+1):\n",
+    "#         twoa = 2*a\n",
+    "#         threea = 3*a\n",
+    "   \n",
+    "#     a = np.append(a, twoa)\n",
+    "#     a = np.append(a, threea)\n",
+    "#     return a\n",
+    "    \n",
+    "    \n",
+    "#     a = np.full((n, n), range(1, n+1))\n",
+    "#     return a\n",
+    "   \n",
+    "\n",
+    "# b = np.fill_diagonal(a, range(1, 5))\n",
+    "# return print(b)\n",
+    "#     a = list(range(1,n+1))\n",
+    "#     return array(map(lambda x: x*n, a))\n",
+    "    "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "## Challenge D: ID Assignment (incomplete)\n",
+    "\n",
+    "#### Description\n",
+    "\n",
+    "a) You work in a company with 100 people - to start, please create a list of people ranging from Person 1 to Person 100. For company purposes, each of these people is identified with a Personal ID, which is a combination of 2 uppercase letters and a random number of 5 digits. For each person, generate a random ID, and store it in a dictionary alongside their name (for example ('Person 5': 'AB73648')). Then sort the dictionary according to the values of their Personal IDs.\n",
+    "\n",
+    "b) One month later, your company changes the ID format for every employee - from now on, every person will have an ID that consists of only letters. In order to convert them, every letter in the employee ID should be replaced by the corresponding uppercase letter in the alphabeth. Please write a function that accomplishes this change"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 47,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['Person 1', 'Person 2', 'Person 3', 'Person 4', 'Person 5', 'Person 6', 'Person 7', 'Person 8', 'Person 9', 'Person 10', 'Person 11', 'Person 12', 'Person 13', 'Person 14', 'Person 15', 'Person 16', 'Person 17', 'Person 18', 'Person 19', 'Person 20', 'Person 21', 'Person 22', 'Person 23', 'Person 24', 'Person 25', 'Person 26', 'Person 27', 'Person 28', 'Person 29', 'Person 30', 'Person 31', 'Person 32', 'Person 33', 'Person 34', 'Person 35', 'Person 36', 'Person 37', 'Person 38', 'Person 39', 'Person 40', 'Person 41', 'Person 42', 'Person 43', 'Person 44', 'Person 45', 'Person 46', 'Person 47', 'Person 48', 'Person 49', 'Person 50', 'Person 51', 'Person 52', 'Person 53', 'Person 54', 'Person 55', 'Person 56', 'Person 57', 'Person 58', 'Person 59', 'Person 60', 'Person 61', 'Person 62', 'Person 63', 'Person 64', 'Person 65', 'Person 66', 'Person 67', 'Person 68', 'Person 69', 'Person 70', 'Person 71', 'Person 72', 'Person 73', 'Person 74', 'Person 75', 'Person 76', 'Person 77', 'Person 78', 'Person 79', 'Person 80', 'Person 81', 'Person 82', 'Person 83', 'Person 84', 'Person 85', 'Person 86', 'Person 87', 'Person 88', 'Person 89', 'Person 90', 'Person 91', 'Person 92', 'Person 93', 'Person 94', 'Person 95', 'Person 96', 'Person 97', 'Person 98', 'Person 99', 'Person 100']\n",
+      "[99640, 54531, 12888, 92813, 68449, 27668, 95199, 66823, 42509, 11180, 35880, 34242, 57300, 57395, 54262, 77114, 86494, 96035, 86270, 51918, 13589, 27462, 50514, 62250, 70379, 62288, 94497, 99956, 84914, 19552, 75982, 21616, 88254, 80415, 45818, 65682, 83431, 48505, 42632, 34122, 23214, 26709, 70415, 30678, 39871, 89274, 57742, 97635, 62018, 41602, 29088, 18728, 71038, 86132, 82767, 22860, 79872, 14181, 79411, 75585, 55562, 86301, 53099, 97665, 77437, 28019, 59097, 94145, 25545, 40394, 23441, 56490, 88216, 38370, 77070, 94451, 27958, 54980, 94846, 27076, 18250, 22743, 71885, 81368, 47898, 33412, 79794, 21914, 11629, 85788, 78775, 19183, 56259, 38634, 33560, 52072, 32961, 48955, 39335, 14603]\n"
+     ]
+    },
+    {
+     "ename": "AttributeError",
+     "evalue": "'dict' object attribute 'keys' is read-only",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mAttributeError\u001b[0m                            Traceback (most recent call last)",
+      "\u001b[0;32m<ipython-input-47-6558dd5d4bab>\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[1;32m     16\u001b[0m \u001b[0;34m\u001b[0m\u001b[0m\n\u001b[1;32m     17\u001b[0m \u001b[0mdict_employees\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0;34m{\u001b[0m\u001b[0;34m}\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0;32m---> 18\u001b[0;31m \u001b[0mdict_employees\u001b[0m\u001b[0;34m.\u001b[0m\u001b[0mkeys\u001b[0m \u001b[0;34m=\u001b[0m \u001b[0memployees\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mAttributeError\u001b[0m: 'dict' object attribute 'keys' is read-only"
+     ]
+    }
+   ],
+   "source": [
+    "# your code here\n",
+    "\n",
+    "employees = [\"Person\"+ ' '+ str(x) for x in range(1, 101)]\n",
+    "print(employees)\n",
+    "\n",
+    "# randomly generate 100 IDs\n",
+    "id = [random.randint(10000, 99999) for x in range(1, 101)] \n",
+    "\n",
+    "#Got the numbers, need to figure out how to add 2 uppercase letters\n",
+    "# string.ascii_uppercase (NOTE! )\n",
+    "\n",
+    "print(id)\n",
+    "\n",
+    "\n",
+    "# then zip the two lists\n",
+    "\n",
+    "dict_employees = {}\n",
+    "dict_employees.keys = employees # this won't work, because error msg will tell you that dictionaries are read only. You cant just (re)assign the values of all keys or all values by setting it equalto a list.\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 43,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "'Q'"
+      ]
+     },
+     "execution_count": 43,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "string.ascii_uppercase\n",
+    "string.ascii_uppercase[int(np.random.randint(25))]\n",
+    "# you can probably remove the int before np.random"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# one method:\n",
+    "\n",
+    "people_ids = dict{}\n",
+    "for (k, v) in zip(employees, id):\n",
+    "    people_ids[k] = v"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 48,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "{'Person 1': 99640,\n",
+       " 'Person 2': 54531,\n",
+       " 'Person 3': 12888,\n",
+       " 'Person 4': 92813,\n",
+       " 'Person 5': 68449,\n",
+       " 'Person 6': 27668,\n",
+       " 'Person 7': 95199,\n",
+       " 'Person 8': 66823,\n",
+       " 'Person 9': 42509,\n",
+       " 'Person 10': 11180,\n",
+       " 'Person 11': 35880,\n",
+       " 'Person 12': 34242,\n",
+       " 'Person 13': 57300,\n",
+       " 'Person 14': 57395,\n",
+       " 'Person 15': 54262,\n",
+       " 'Person 16': 77114,\n",
+       " 'Person 17': 86494,\n",
+       " 'Person 18': 96035,\n",
+       " 'Person 19': 86270,\n",
+       " 'Person 20': 51918,\n",
+       " 'Person 21': 13589,\n",
+       " 'Person 22': 27462,\n",
+       " 'Person 23': 50514,\n",
+       " 'Person 24': 62250,\n",
+       " 'Person 25': 70379,\n",
+       " 'Person 26': 62288,\n",
+       " 'Person 27': 94497,\n",
+       " 'Person 28': 99956,\n",
+       " 'Person 29': 84914,\n",
+       " 'Person 30': 19552,\n",
+       " 'Person 31': 75982,\n",
+       " 'Person 32': 21616,\n",
+       " 'Person 33': 88254,\n",
+       " 'Person 34': 80415,\n",
+       " 'Person 35': 45818,\n",
+       " 'Person 36': 65682,\n",
+       " 'Person 37': 83431,\n",
+       " 'Person 38': 48505,\n",
+       " 'Person 39': 42632,\n",
+       " 'Person 40': 34122,\n",
+       " 'Person 41': 23214,\n",
+       " 'Person 42': 26709,\n",
+       " 'Person 43': 70415,\n",
+       " 'Person 44': 30678,\n",
+       " 'Person 45': 39871,\n",
+       " 'Person 46': 89274,\n",
+       " 'Person 47': 57742,\n",
+       " 'Person 48': 97635,\n",
+       " 'Person 49': 62018,\n",
+       " 'Person 50': 41602,\n",
+       " 'Person 51': 29088,\n",
+       " 'Person 52': 18728,\n",
+       " 'Person 53': 71038,\n",
+       " 'Person 54': 86132,\n",
+       " 'Person 55': 82767,\n",
+       " 'Person 56': 22860,\n",
+       " 'Person 57': 79872,\n",
+       " 'Person 58': 14181,\n",
+       " 'Person 59': 79411,\n",
+       " 'Person 60': 75585,\n",
+       " 'Person 61': 55562,\n",
+       " 'Person 62': 86301,\n",
+       " 'Person 63': 53099,\n",
+       " 'Person 64': 97665,\n",
+       " 'Person 65': 77437,\n",
+       " 'Person 66': 28019,\n",
+       " 'Person 67': 59097,\n",
+       " 'Person 68': 94145,\n",
+       " 'Person 69': 25545,\n",
+       " 'Person 70': 40394,\n",
+       " 'Person 71': 23441,\n",
+       " 'Person 72': 56490,\n",
+       " 'Person 73': 88216,\n",
+       " 'Person 74': 38370,\n",
+       " 'Person 75': 77070,\n",
+       " 'Person 76': 94451,\n",
+       " 'Person 77': 27958,\n",
+       " 'Person 78': 54980,\n",
+       " 'Person 79': 94846,\n",
+       " 'Person 80': 27076,\n",
+       " 'Person 81': 18250,\n",
+       " 'Person 82': 22743,\n",
+       " 'Person 83': 71885,\n",
+       " 'Person 84': 81368,\n",
+       " 'Person 85': 47898,\n",
+       " 'Person 86': 33412,\n",
+       " 'Person 87': 79794,\n",
+       " 'Person 88': 21914,\n",
+       " 'Person 89': 11629,\n",
+       " 'Person 90': 85788,\n",
+       " 'Person 91': 78775,\n",
+       " 'Person 92': 19183,\n",
+       " 'Person 93': 56259,\n",
+       " 'Person 94': 38634,\n",
+       " 'Person 95': 33560,\n",
+       " 'Person 96': 52072,\n",
+       " 'Person 97': 32961,\n",
+       " 'Person 98': 48955,\n",
+       " 'Person 99': 39335,\n",
+       " 'Person 100': 14603}"
+      ]
+     },
+     "execution_count": 48,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "# another method:\n",
+    "\n",
+    "dict(zip(employees, id))"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 49,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# to alter the ids:\n",
+    "\n",
+    "def convert_ids(x):\n",
+    "    newid = x[0:2]\n",
+    "    for i in range(2, 7):\n",
+    "        print(newid)\n",
+    "        # for the elements in your IDs that are NOT already letters (the 5 numeric digits), add letters whose location in the alaphabet correspod to the digit locations.\n",
+    "        newid = newid + string.ascii_uppercase[int(x[i])-1] # this i-1 is so that the letter A corresponds to 1 and not 0.\n",
+    "    return newid"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.5"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 2
+}
