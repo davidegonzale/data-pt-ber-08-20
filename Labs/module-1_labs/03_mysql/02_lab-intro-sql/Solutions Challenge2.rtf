@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2513
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 HelveticaNeue-Medium;}
+{\colortbl;\red255\green255\blue255;\red27\green31\blue34;\red255\green255\blue255;\red21\green23\blue26;
+\red244\green246\blue249;\red10\green77\blue204;\red27\green31\blue34;\red21\green23\blue26;\red244\green246\blue249;
+\red10\green77\blue204;}
+{\*\expandedcolortbl;;\cssrgb\c14118\c16078\c18039;\cssrgb\c100000\c100000\c100000;\cssrgb\c10588\c12157\c13725\c5098;
+\cssrgb\c96471\c97255\c98039;\cssrgb\c1176\c40000\c83922;\cssrgb\c14118\c16078\c18039;\cssrgb\c10588\c12157\c13725\c5098;\cssrgb\c96471\c97255\c98039;
+\cssrgb\c1176\c40000\c83922;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f0\b\fs30 \cf2 \cb3 \expnd0\expndtw0\kerning0
+1. From the\'a0
+\f1 \cb4 order_items
+\f0 \cb3 \'a0table, find the price of the highest priced order item and lowest price order item.\
+SELECT MIN(first_contact_date), MAX(first_contact_date)\
+FROM olist.marketing_qualified_leads;\
+ANSWER = 2017-06-14 02:00:00 2018-05-31 02:00:00\
+\
+2. From the\'a0
+\f1 \cb4 marketing_qualified_leads
+\f0 \cb3 \'a0table, find the top 3 most frequent origin types for all first_contact_date entries in 2018.\
+SELECT origin, COUNT(origin) AS freq\
+FROM olist.marketing_qualified_leads GROUP BY origin \
+HAVING COUNT(*)>1 ORDER BY freq DESC;\
+\
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cb5 organic_search, paid_search and social\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b\fs30 \cf6 \cb1 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 \cb3 3. From the\'a0
+\f1 \cb4 marketing_qualified_leads
+\f0 \cb3 \'a0table, find the first_contact_date with the highest number of mql_id entries and state the number of entries on that date.\
+SELECT first_contact_date, COUNT(mql_id)\
+FROM olist.marketing_qualified_leads \
+GROUP BY first_contact_date\
+ORDER BY COUNT(mql_id) DESC\
+LIMIT 1;\
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cb5 2018-05-02 02:00:00 with 93 mql_id entries\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b\fs30 \cf6 \cb1 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 \cb3 4. From the\'a0
+\f1 \cb4 products
+\f0 \cb3 \'a0table, find the name and count of the top 2 product category names.\
+SELECT product_category_name, COUNT(product_category_name)\
+FROM olist.products\
+GROUP BY product_category_name\
+ORDER BY COUNT(product_category_name) DESC\
+LIMIT 2;\
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cb5 cama_mesa_banho 3029 and esporte_lazer 2867\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b\fs30 \cf6 \cb1 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 \cb3 5. From the\'a0
+\f1 \cb4 products
+\f0 \cb3 \'a0table, find the product_category_name with the highest recorded product weight in grams.\
+SELECT product_category_name, product_weight_g\
+FROM olist.products\
+ORDER BY product_weight_g DESC\
+LIMIT 1;\
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cb5 cama_mesa_banho at 40425 grams\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b\fs30 \cf6 \cb1 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf2 \cb3 6. From the\'a0
+\f1 \cb4 products
+\f0 \cb3 \'a0table, find the product_category_name with the greatest sum of dimensions including length, height and width in centimeters.\
+SELECT product_category_name, MAX(product_height_cm + product_width_cm + product_length_cm) as Total\
+FROM olist.products\
+GROUP BY product_category_name\
+ORDER BY Total DESC\
+LIMIT 1;\
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cb5 cama_mesa_banho at 234 cm\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f0\b\fs30 \cf6 \cb1 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f3 \cf7 \cb3 \outl0\strokewidth0 \strokec7 7. From the\'a0
+\f1 \cb8 order_payments table
+\f3 \cb3 , find the payment_type with the greatest number of order_id entries and the count of that payment type.\
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f0 \cf2 \strokec2 SELECT payment_type, COUNT(order_id) \
+FROM olist.order_payments\
+GROUP BY payment_type\
+ORDER BY COUNT(order_id) DESC;\outl0\strokewidth0 \
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cf7 \cb9 \outl0\strokewidth0 \strokec7 credit_card was used for 76795 order_id entries\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3\b\fs30 \cf10 \cb1 \strokec10 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf7 \cb3 \strokec7 8. From the\'a0
+\f1 \cb8 order_payments table
+\f3 \cb3 , find the highest payment value for an individual order_id.\
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f0 \cf2 \strokec2 SELECT MAX(payment_value)\
+FROM olist.order_payments;\outl0\strokewidth0 \
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cf7 \cb9 \outl0\strokewidth0 \strokec7 13664.1\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f3\b\fs30 \cf10 \cb1 \strokec10 \
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+\cf7 \cb3 \strokec7 9. From the\'a0
+\f1 \cb8 sellers
+\f3 \cb3 \'a0table, find the 3 seller states with the greatest number of distinct seller cities.\
+\pard\pardeftab720\sl360\sa320\partightenfactor0
+
+\f0 \cf2 \strokec2 SELECT COUNT(seller_id), seller_state\
+FROM olist.sellers\
+GROUP BY seller_state\
+ORDER BY COUNT(seller_id) DESC\
+LIMIT 3;\outl0\strokewidth0 \
+ANSWER = 
+\f2\b0\fs27\fsmilli13600 \cf7 \cb9 \outl0\strokewidth0 \strokec7 SP has 260 distinct seller cities, MG has 82 distinct seller cities and PR has 67 distinct seller cities.\
+\pard\tx566\pardeftab720\partightenfactor0
+
+\f0\b\fs30 \cf2 \cb3 \outl0\strokewidth0 \
+}
