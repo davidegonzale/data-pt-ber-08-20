@@ -24,7 +24,7 @@ A personal access token is a secret password to allow you or your app to make re
 After generating the token, you can test it with `curl` in the Terminal. Assuming your Git username is `johndoe` and token is `d10ev1shpm10x5qox9ckw1k9b792p9rq0ogplpn5cyo55`, you can make the curl command in the following way:
 
 ```bash
-$ curl -u johndoe:d10ev1shpm10x5qox9ckw1k9b792p9rq0ogplpn5cyo55 https://api.github.com/user`
+$ curl -u johndoe:d10ev1shpm10x5qox9ckw1k9b792p9rq0ogplpn5cyo55 https://api.github.com/user
 ```
 
 If your token is valid, you will see a JSON response that looks like:
@@ -55,42 +55,24 @@ Then you can open `output.json` with your favorite text editor to have a deep lo
 
 :information_source: From now on, we will not give you step-by-step instructions in the labs. You already have the foundation in Python and data analytics that allows you to research data solutions. We will, however, provide general guidance on how to complete your lab assignments. In case you find it difficult to tackle your assignments with the general guidance, please don't hesitate to ask the instructional team. We are here to help! :v:
 
+The documentation of Github API is [here](https://docs.github.com/en/free-pro-team@latest/rest).
+
 ## Goals
 
-### Challenge 1: Fork Languages
-
-You will find out how many programming languages are used among all the forks created from the main lab repo of your bootcamp. Assuming the main lab repo is `ironhack-datalabs/madrid-oct-2018`, you will:
-
-1. Obtain the full list of forks created from the main lab repo via Github API.
-
-1. Loop the JSON response to find out the `language` attribute of each fork. Use an array to store the `language` attributes of each fork.
-    * *Hint: Each language should appear only once in your array.*
-
-1. Print the language array. It should be something like:
-
-	```["Python", "Jupyter Notebook", "HTML"]```
-
-Again, the documentation of Github API is [here](https://developer.github.com/v3/).
+### Challenge 1: Forks
 
 ### Challenge 2: Count Commits
 
 Count how many commits were made in the past week.
 
-1. Obtain all the commits made in the past week via API, which is a JSON array that contains multiple commit objects.
+1. Obtain all the commits made, which is a JSON array that contains multiple commit objects.
 
-1. Count how many commit objects are contained in the array.
+Bonus: Obtain all the commits made in the past week via API, which is a JSON array that contains multiple commit objects.
 
-### Challenge 3: Hidden Cold Joke
-
-Using Python, call Github API to find out the cold joke contained in the 24 secret files in the following repo:
-
-https://github.com/ironhack-datalabs/scavenger
-
-The filenames of the secret files contain `.scavengerhunt` and they are scattered in different directories of this repo. The secret files are named from `.0001.scavengerhunt` to `.0024.scavengerhunt`. They are scattered randomly throughout this repo. You need to **search for these files by calling the Github API**, not searching the local files on your computer.
 
 Notes:
 
-* Github API documentation can be found [here](https://developer.github.com/v3/).
+* Github API documentation can be found [here](https://docs.github.com/en/free-pro-team@latest/rest).
 
 * You will need to study the Github API documentation to decide which API endpoint to call and what parameters to use in order to obtain the information you need. Unless you are already super familiar with Github API or super lucky, you probably will do some trials and errors. Therefore, be prepared to go back and forth in studying the API documentation, testing, and revising until you obtain what you need.
 
@@ -102,23 +84,10 @@ Notes:
 
 	Don't worry. Check the parameters in your request and wait for a minute or two before you make additional requests.
 
-**After you find out the secrete files:**
-
-1. Sort the filenames ascendingly.
-
-1. Read the content of each secret files into an array of strings.
-
-1. Concatenate the strings in the array separating each two with a whitespace.
-
-1. Print out the joke.
 
 ## Deliverables
 
-* `challenge-1.py` or `challenge-1.ipynb` that contains your solution to Challenge 1.
-
-* `challenge-2.py` or `challenge-1.ipynb` that contains your solution to Challenge 2.
-
-* `challenge-3.py` or `challenge-1.ipynb` that contains your solution to Challenge 3.
+* `main.ipynb` 
 
 ## Submission
 

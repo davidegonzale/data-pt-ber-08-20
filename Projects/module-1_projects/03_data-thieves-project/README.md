@@ -14,12 +14,12 @@
 - [Resources](#resources)
 
 ## Project Description  
-For this project you will be working in a **team**. You will have to choose a topic and find all the relevant data yourselves. This means you can connect to an API, find a dataset or scrape data from the web. Then you must organize, clean and (optional) analyze the data you found and present your findings in a presentation (you may use plots!).  
+For this project you will be working in a **team**. The size for each team should be between 2 and 4 people - you are not allowed to work on a project alone, since team building and collaborating on a shared code repo are part of the learning outcomes. You will have to choose a topic and find all the relevant data yourselves. This means you can connect to an API, find a dataset or scrape data from the web. Then you must organize, clean and (optional) analyze the data you found and present your findings in a presentation (you may use plots!).  
 
 ## Project Goals
 During this project you will:
 * Learn how to obtain data from different sources, including APIs, open source datasets and/or scrape data from the web.
-* Practice how clean data using vectorized methods.
+* Practice how to clean data.
 * Begin to practice basic plotting.
 
 ## Data Workflow
@@ -27,8 +27,8 @@ In this project you will focus on Data Extraction techniques, while you continue
 
 ## Requirements & Deliverables
 The **mandatory** requirements that this project needs to satisfy are:
-* The project must be planned. That is why creating a Kanban board and readme documentation is important. You can find a template for Trello [here](https://trello.com/b/kImhfE7w/data-projects).
-* Your repository must be clean and organized; this means that it must include a *.gitignore* file and a README file and also have a functional file structure.
+* The project must be planned. You need to create a list of tasks and assign them to project members - an example for this could be creating a Kanban board.  You can find a template for Trello [here](https://trello.com/b/kImhfE7w/data-projects).
+* You will write code in a shared git repository with all of your teammates (read: git!). Your repository must be clean and organized; this means that it must include a *.gitignore* file and a README file with documentation and also have a functional file structure.
 * Your project must include data from at least 2 different data sources (APIs & web, dataset & APIs, etc.).
 * The project needs to be presented within 5 minutes to your colleagues on the day of the presentation.
 
@@ -67,7 +67,7 @@ Your mentors are **not** meant to:
 * Design your presentation, focusing on techniques, trouble points, and workflow. Analysis and plotting are optional and should not be the focus of the presentation.
 
 **Step 4**
-* Presentation time at **14:00** on Friday! There will be a 1-minute dance break between groups!
+* Presentation time at **16:00** on Saturday! Presentations should last max 5 minutes each and there will be a 1-minute dance break between groups!
 
 ## Necessary Deliverables
 The following deliverables should be pushed to your Github repo and the link should be submitted via the student portal.
@@ -75,7 +75,7 @@ The following deliverables should be pushed to your Github repo and the link sho
 * **A Jupyter Notebook (.ipynb) file**:
 The structure should be:
 1. Title of the project.
-2. Introduction to hypothoses.
+2. Introduction to hypotheses.
 3. Data used (sources, limitations, cleaning, etc...)
 4. Any analysis and plots created.
 5. Any insights derived from your basic analysis.
