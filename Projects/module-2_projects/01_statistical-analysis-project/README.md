@@ -37,10 +37,8 @@ The following deliverables should be pushed to your Github repo for this project
 1. Make informed guess on which features should be investigated in depth.
 
 1. Data cleaning & manipulation. Apply the following techniques as appropriate:
-    * Adjust skewed data distribution.
     * Remove columns with high proportion of missing values.
     * Remove records with missing values.
-    * Feature reduction.
     * Convert categorical data to numerical.
 
 1. Compute field relationship scores with the chosen statistical model.
