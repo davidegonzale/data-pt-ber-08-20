@@ -6,30 +6,22 @@
 
 In the past two lessons, you have learned what Unsupervised Machine Learning is, what problems are suitable for a solution based on Unsupervised Machine Learning, how to apply Unsupervised Machine Learning, and you have practiced implementing the basic phases of a solution using Scikit-learn. Now is time to put all that conceptual and procedural knowledge to work by doing a larger project. Choose a problem domain that motivates you, and build a complete solution implementing all the phases you learned about in previous chapters. We provide some ideas of interesting problem domains in a dedicated section in this lesson, but we want you to be creative and adventurous, and explore other options as well. This lesson does not present any new material: everything you will need to complete this project was discussed on previous lessons.
 
-## External Interface Requirements
+## Project Requirements
 
-1. Input requirement: capacity to read a dataset stored on disk.
-2. Output requirement: report on optimal number of clusters, centroid coordinates and quality metric.
-3. Output requirement: identifiers of classes corresponding to new instances classified by the model.
-
-## Functional Requirements
-
-1. The software must learn a clusterization a the dataset.
-2. The software must use the learned clusterization to classify new problem instances.
-3. The software must evaluate the quality of a clusterization.
-4. The software must be flexible to work with different preconfigured amount of clusters.
-5. The software must compare results using different numbers of clusters and determine which number of clusters is best.
+1. Your code needs to read a dataset stored on disk as input, and divide it into train and test set.
+2. Your code needs to use the learned model to estimate the target value of problem instances.
+3. Your code must compute a quality metric of the learned model.
 
 ## Technical Requirements
 
 1. Use Python as programming language.
-2. Use Pandas for reading the dataset into a Pandas dataframe.
+2. Use Pandas for reading the dataset into a pandas dataframe.
 3. Use Scikit-learn for training and testing the Machine Learning model.
 
 ## Necessary Deliverables
 
-1. Python application that performs ETL, training, and testing.
-2. Report containing quality metrics, and explanation of the dataset, and the experimental procedure (range of the different number of clusters that were tested, how the range was traversed, etc.).
+1. Python code.
+2. Brief report containing explanation of the dataset, quality metrics of the model and the experimental procedure (whether a single split was performed, or cross-validation, etc.).
 
 ## Suggestions to Get Started
 

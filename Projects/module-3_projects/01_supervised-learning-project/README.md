@@ -6,17 +6,11 @@
 
 There are many interesting use cases for Supervised Machine Learning. To name a few: prediction of the effectiveness of medical treatments, prediction of the exchange rates of foreign currencies, diagnosing Parkinson's disease just by listening to the voice of a patient, face recognition, recommendation of the news that are expected to be most interesting to a given user, etc. Choose one that motivates you and implement a solution using a Supervised Machine Learning algorithm of your choice. You don't have to start from zero: in the previous lessons you have read Python code snippets that you can adapt and reuse for you project, just make sure you understand what they do. This lesson does not present any new material at all, it is only intended as an opportunity to put into practice the knolwedge you learned in the previous lessons.
 
-## External Interface Requirements
+## Project Requirements
 
-1. Input requirement: capacity to read a dataset stored on disk.
-2. Output requirement: report quality metrics of the Machine Learning model.
-3. Output requirement: output estimations corresponding to test instances.
-
-## Functional Requirements
-
-1. The software must be able to learn a model from a supervised dataset.
-2. The software must be able to use the learned model to estimate the target value of problem instances.
-3. The software must be able to compute a quality metric of the learned model.
+1. Your code needs to read a dataset stored on disk as input, and divide it into train and test set.
+2. Your code needs to use the learned model to estimate the target value of problem instances.
+3. Your code must compute a quality metric of the learned model.
 
 ## Technical Requirements
 
@@ -26,8 +20,8 @@ There are many interesting use cases for Supervised Machine Learning. To name a 
 
 ## Necessary Deliverables
 
-1. Python application, or applications, that perform ETL, training and testing.
-2. Report containing quality metrics, and explanation of the dataset, and the experimental procedure (whether a single split was performed, or cross-validation, etc.).
+1. Python code.
+2. Brief report containing explanation of the dataset, quality metrics of the model and the experimental procedure (whether a single split was performed, or cross-validation, etc.).
 
 ## Suggestions to Get Started
 1. Find an interesting dataset! Look in the Useful Resources section for sources of ideas.
