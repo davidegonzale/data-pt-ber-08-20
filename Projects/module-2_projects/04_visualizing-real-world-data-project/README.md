@@ -20,6 +20,7 @@ The technical requirements for this project are as follows:
  - Create Jupyter notebooks to analyze the data
  - Using your data, create a minimum of 4 types of plots (ie: scatter plot, histogram, box plot and bar graph), but you can add more than one visualization of each type of you choose. Graphs should contain the proper labeling of the x and y axis when appropriate as well as a title for the graph. All of the different graphs do not need to be in the presentation.
  - Explain what insight or information is inferred from these visualizations. The explanation should be in the notebook in markdown cells.
+ - Think about any quantitative analysis techniques from class that can help you understand your data and relationships between your variables.
 
 ## Necessary Deliverables
 
@@ -37,13 +38,12 @@ The following deliverables should be pushed to your Github repo for this chapter
 * **Use the tools in your tool kit** - your knowledge of the different types of visualizations and when to use them should come in handy with this assignment.
 * **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
-## Suggested Timeline
+## Suggested Timeline / Steps to Proceed
 * **Pre-project** - decide on a topic and try to find a few datasets that could be used
-* **Day 1-2** - clean and wrangle your data. Maybe add a new data source if you feel that you need it. 
-* **Day 2-4** - start to analyze your data. Decide which statistical models you would like to use. Fit your models (be careful not to overfit!) and start plotting. Focus on good annotations that help people understand your thought process and what the data is showing. 
-* **Day 3-5** - prep your presentation. This can be something you slowly start to think of during the analysis phase. It will help you to guide your analysis in a way that creates a story. Your audience could include visitors from the other bootcamps, so try to focus on understandable results instead of the actual statistical methods used. 
-* **Day 5** - Present! Ideally you will spend most of Day 5 practicing your presentation and preparing for questions that people may ask!
-* **Weekend** - Submit your Github repo by Sunday at 23:59 and get some well-deserved rest!
+* **Step 1** - clean and wrangle your data. Maybe add a new data source if you feel that you need it. 
+* **Step 2** - start to analyze your data. Decide which statistical models you would like to use. Fit your models (be careful not to overfit!) and start plotting. Focus on good annotations that help people understand your thought process and what the data is showing. 
+* **Step 4** - prep your presentation. This can be something you slowly start to think of during the analysis phase. It will help you to guide your analysis in a way that creates a story. Try to focus on understandable results instead of the actual statistical methods used, and think about ways to engage your audience! Practice the presentation beforehand to make sure it is easy to follow for your audience, and interesting at the same time. Also, prepare for questions that people may ask!
+* **Final Step** - Submit your Github repo by Sunday, December 13 at 23:59 and get some well-deserved rest!
 
 ## Project Feedback + Evaluation
 

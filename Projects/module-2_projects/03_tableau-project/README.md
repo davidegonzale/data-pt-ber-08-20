@@ -6,7 +6,7 @@
 
 The goal of this project is for you to practice what you have learned in the Business Intelligence chapter of this program. For this project, you will choose a data set, explore the data using Tableau, and put together a Story for presentation showing the insights you have derived from the data. You should demonstrate your proficiency using Tableau and the concepts you have learned throughout the chapter. The workbook should be saved to Tableau Public and a link to the workbook should be provided.
 
-**You will be working individually for this project**, but we'll be guiding you along the process and helping you as you go. Show us what you've got!
+**You will be working in pairs for this project**. On Tuesday, we would like each pair to give a brief presentation of their Tableau story. Again, think STORY! Do not tell us the steps you used in the analysis, but instead tell the story of your data in graphs. The speaking time should be divided between both people in the pair, and not exceed a total of 5 mins (that's about 1 min per story point). Show us what you've got!
 
 ---
 
@@ -29,14 +29,15 @@ The following deliverables should be pushed to your Github repo for this chapter
 * **An data folder** containing the data set you used for your project.
 * **A ``README.md`` file** containing a detailed explanation of your approach and code for constructing visualizations and organizing them into a Story as well as your results, obstacles encountered, lessons learned, and a link to your completed Tableau workbook.
 
+We will have everyone present their Tableau stories in class on Tuesday!
+
 ## Suggested Ways to Get Started
 
 * **Find a data set to process** - a great place to start looking would be [Awesome Public Data Sets](https://github.com/awesomedata/awesome-public-datasets) and [Kaggle Data Sets](https://www.kaggle.com/datasets).
 * **Explore the data set** and come up with a variety of visualizations that you can potentially include in your story.
 * **Break the project down into different steps** - identify the entities/dimensions in your data set, explore them each individually, and then progress to analyzing different combinations of them.
 * **Use the tools in your tool kit** - the concepts and methods you have learned in the business intelligence chapter as well as some of the things you've learned in previous chapters. This is a great way to start tying everything you've learned together!
-* **Work through the lessons in class** & ask questions when you need to! Think about adding relevant code to your project each night, instead of, you know... _procrastinating_.
-* **Commit early, commit often**, don’t be afraid of doing something incorrectly because you can always roll back to a previous version.
+* **Work through the lessons in class** & ask questions when you need to!
 * **Consult documentation and resources provided** to better understand the tools you are using and how to accomplish what you want.
 
 ## Useful Resources
