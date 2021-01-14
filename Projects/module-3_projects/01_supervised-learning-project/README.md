@@ -21,12 +21,12 @@ There are many interesting use cases for Supervised Machine Learning. To name a 
 ## Necessary Deliverables
 
 1. Python code.
-2. Brief report containing explanation of the dataset, quality metrics of the model and the experimental procedure (whether a single split was performed, or cross-validation, etc.).
+2. A brief presentation containing the dataset of your choice, the problem you are looking at and quality metrics of the model you implemented.
 
 ## Suggestions to Get Started
-1. Find an interesting dataset! Look in the Useful Resources section for sources of ideas.
+1. Find an interesting dataset! Look in the Useful Resources section for sources of ideas. At the same time, don't spend too much time picking and going into complexity - this is a mini-project, which should make you more comfortable with the supervised learning process start to finish. Find a dataset which is interesting for you, but also whose structure is suitable to supervised learning. You can also re-use a dataset from previous lessons or projects!
 2. Break down the project into smaller tasks, for instance: importing the dataset, training, etc.
-3. Decide whether you will create a single Python application or several Python applications.
+3. Re-use your code from the labs on supervised learning!
 
 ## What to Do When Feeling Stuck
 If you get stuck at some stage of the project, and you cannot find a way out, you can try this:
@@ -39,9 +39,3 @@ If you get stuck at some stage of the project, and you cannot find a way out, yo
 * University of California at Irvine's [Machine Learning Repository](https://archive.ics.uci.edu/ml)
 * OpenML [datasets](https://www.openml.org)
 * Kaggle [datasets](https://www.kaggle.com/datasets)
-
-## Rubric
-* Separate dataframes for attribute values, and target values: 1 point.
-* Model trained and evaluated: 2 points.
-* Model used for estimation of new instances: 1 point.
-* Different experiments performed using different models, to determine best choice: up to 2 points.
