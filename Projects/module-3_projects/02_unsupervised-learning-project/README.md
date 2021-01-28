@@ -9,8 +9,8 @@ In the past two lessons, you have learned what Unsupervised Machine Learning is,
 ## Project Requirements
 
 1. Your code needs to read a dataset stored on disk as input, and divide it into train and test set.
-2. Your code needs to use the learned model to estimate the target value of problem instances.
-3. Your code must compute a quality metric of the learned model.
+2. Your code needs to use the learned model to estimate the target value of problem instances (cluster labels).
+3. Your code must compute a quality metric of the model.
 
 ## Technical Requirements
 
@@ -18,17 +18,11 @@ In the past two lessons, you have learned what Unsupervised Machine Learning is,
 2. Use Pandas for reading the dataset into a pandas dataframe.
 3. Use Scikit-learn for training and testing the Machine Learning model.
 
-## Necessary Deliverables
-
-1. Python code.
-2. Brief report containing explanation of the dataset, quality metrics of the model and the experimental procedure (whether a single split was performed, or cross-validation, etc.).
-
 ## Suggestions to Get Started
 
 1. Find an interesting dataset! Look in the Useful Resources section for sources of ideas.
 2. If you do not find a pre-existing dataset on the problem domain that you like, be creative: consider building the dataset yourself and donating the dataset to one of the public Machine Learning repositories.
 3. Break down the project into smaller tasks, for instance: importing the dataset, training, etc.
-4. Decide whether you will create a single Python application or several Python applications.
 
 ## Potential Project Ideas
 
@@ -41,10 +35,3 @@ In the past two lessons, you have learned what Unsupervised Machine Learning is,
 * University of California at Irvine's [Machine Learning Repository](https://archive.ics.uci.edu/ml)
 * OpenML [datasets](https://www.openml.org)
 * Kaggle [datasets](https://www.kaggle.com/datasets)
-
-## Rubric
-
-* Read dataset into Pandas dataframe and select the training set from it: 1 point.
-* Model trained and evaluated: 2 points.
-* Model used for estimation of new instances: 1 point.
-* Different experiments performed using different amounts of clusters, to determine best choice: up to 2 points.
