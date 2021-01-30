@@ -11,7 +11,7 @@
 * [Phase 1](#Phase-1)
 * [Phase 2](#Phase-2)
 * [Phase 3](#Phase-3)
-* [Phase 4](#Phase-4) (OPTIONAL)
+* [Phase 4](#Phase-4)
 
 **[Necessary Deliverables](#necessary-deliverables)**
 
@@ -23,11 +23,10 @@
 
 ## Overview
 
-The goal of this project is to give you an opportunity to demonstrate the skills you have built throughout this program. In this project, you will use Python, SQL, and Tableau to put together a complete analytics workflow, including:
+The goal of this project is to give you an opportunity to demonstrate the skills you have built throughout this program. In this project, you can use Python, SQL, and Tableau to put together a complete analytics workflow, including:
 
 * Data acquisition
-* Data wrangling
-* Data storage
+* Data wrangling / cleaning
 * Data exploration and analysis
 * Statistical Modelling
 * Feature selection
@@ -35,9 +34,9 @@ The goal of this project is to give you an opportunity to demonstrate the skills
 * Model evaluation
 * Reporting and presentation of insights
 
-The final project is structured into 2 weeks in which you build up your deliverables progressively and iteratively. We have provided a list of data sets for you to choose from. However, you are encouraged to obtain your own data sets. Using the knowledge you have acquired and your experience working with data, you will come up with a plan for what you are going to do and then design the project around the data set you have chosen.
+The final project is structured into 3 weeks in which you build up your deliverables progressively and iteratively. We have provided a list of data sets for you to choose from. However, as in all previous projects, these just serve as an inspiration and you can clearly choose your own datasets that you find interesting. Using the knowledge you have acquired and your experience working with data, you will come up with a plan for what you are going to do and then design the project around the data set you have chosen.
 
-**You can work individually or in self organized groups of up to 4**. We'll be guiding you along the process and helping you as you go. You will be working on this project over the course of 2 weeks. The proposed progression is listed below. Use it as a guideline to keep your work structured but if you feel like you have a working flow, feel free to manage the project however you think works best.
+**You can work individually or in pairs**. We'll be guiding you along the process and helping you as you go. You will be working on this project over the course of 3 weeks. The proposed progression is listed below. Use it as a guideline to keep your work structured but if you feel like you have a working flow, feel free to manage the project however you think works best.
 Remember, however, that data analysis is iterative. So from time to time you may need to step back to a previous phase and iterate. It is advised that you start with a small and reasonable scope, finish it and continuously re-iterate. 
 
 ### Phase 1 - Brain Storming and Data Preparation
@@ -46,7 +45,7 @@ Remember, however, that data analysis is iterative. So from time to time you may
 * Data gathering & cleaning
 * Data storage
 
-Identify topics of interest and see if there is available data. Ideally, formulate questions you want to answer. If someone asks you what you are working on, you should be able to easily answer in one sentence.
+Identify topics of interest and see if there is available data. Ideally, formulate questions you want to answer. Think about an elevator pitch of your idea: if someone asks you what you are working on, you should be able to answer in one sentence or in 30 seconds of taking an elevator.
 
 ### Phase 2 - Exploratory Data Analysis
 
@@ -56,7 +55,7 @@ Identify topics of interest and see if there is available data. Ideally, formula
 
 Start exploring and getting familiar with the available data. Try to narrow the scope of your intial questions to what may be possible to further look into or answer given the data you have or can get in addition.
 
-### Phase 3 - Data Analysis First Iteration
+### Phase 3 - Data Analysis 
 
 ML:
 
@@ -71,19 +70,13 @@ Analysis:
 * Come up with compelling stories
 
 
-### Phase 4 - Data Analysis More Iterations (OPTIONAL)
 
-ML:
+### Phase 4 - Storytelling
 
-* Iterations on your modeling
-* Model evaluation and comparison
-* Prepare for presentation
-
-Analysis:
-
-* Investigate additional questions
 * Pick the most interesting findings
 * Create your story
+* Prepare for presentation
+
 
 ---
 
@@ -91,7 +84,7 @@ Analysis:
 
 ### Phase 1
 
-On the first day of your project, you will be planning your project, exploring datasets and generating ideas. Ideally, you come up with a game plan on what you want to accomplish in the following three days. Aim to finish a first, minimal iteration in the shortest amount of time possible so that you can quickly dig further or discard initial ideas. Make sure to book some time with one of the teaching staff to get quick feedback on feasibility of your project idea.
+In the first phase of your project, you will be planning your project, exploring datasets and generating ideas. Ideally, you come up with a game plan on what you want to accomplish. Feel free to book some time with one of the teaching staff to get quick feedback on feasibility of your project idea.
 
 To get started, here are a few publicly available data sets:
 
@@ -185,21 +178,19 @@ Resources:
 
 ### Phase 2
 
-On the second day of your project, you will start with preparing your data. You will explore, analyze, and visualize the data using Python or Tableau, applying the variety of techniques you learned throughout the program.
+In the second phase of your project, you will start with preparing your data. You will explore, analyze, and visualize the data using Python (or Tableau if you like), applying the variety of techniques you learned throughout the program.
 
-Make sure to categorize your notebooks in logical groups. Make it a habit to add comments in code cells or markdown cells so that you always remember what you have done. Invest time in staying organized, your future self will thank you later. Summarize your findings and don't be scared to discard things that don't help you in moving forward.
+Make sure to categorize your notebooks in logical groups. Make it a habit to add comments in code cells or markdown cells so that you always remember what you have done. Invest time in staying organized, your future self will thank you later. Summarize your findings and don't be scared to discard things that don't help you in moving forward. Also, this is a basic piece of advice but don't make a mess out of your notebooks! Always work from top to bottom, choose clearly understandable variable names, comment on what you are doing while it's still fresh in your memory and make sure that you will be able to replicate your steps at a future point in time.
 
 ### Phase 3
 
-In this phase, you should be finalizing the first iteration of your project. Ideally, this is still within the first week so that you have enough time to re-iterate, improve, dig deeper and prepare your final presentation.
-
-You will be using the analysis you performed and the insights you discovered in the previous day to help frame your machine learning problem, select and engineer appropriate features, train your models, and evaluate performance.
+In this phase, you should be finalizing the first iteration of your project. You will be using the analysis you performed and the insights you discovered in the previous phase to help frame your machine learning problem, select and engineer appropriate features, train your models, and evaluate performance.
 
 * If you are planning on doing supervised machine learning, identify the target variable you would like to train a model to predict. Also determine whether you will be doing regression (target variable is continuous) or classification (target variable is discrete).
 * Perform feature selection/engineering to arrive at the features you feel best represent the problem you are trying to solve. During this stage, you may need to normalize or scale your variables.
 * Train a couple machine learning models on the data.
 * Evaluate the performance of the models.
-* Prepare a presentation of your findings and results.
+* Think about your findings and results and what we learn from your analysis.
 
 If you're not working on a machine learning problem, identify the meaningful insights or learnings that you generated that you want to keep focusing on in the following days. This is a good point to list and reflect on everything you collected so far and to rank them based on what could create a compelling story.
 
@@ -207,23 +198,17 @@ If you're not working on a machine learning problem, identify the meaningful ins
 * Add statistics and visualizations
 * Sketch a story around your points
 
-Once you reach this point, ask fellow students, friends or teaching staff for feedback and ideas to dig deeper.
+Once you reach this point, ask fellow students, friends or teaching staff for feedback and ideas to dig deeper. If you like, continue iterating on your machine learning models with the objective of optimizing their performance. Spend some time to get a deeper understanding of the algorithms or statistical methods you are using and how your work could be improved. You can also organize your machine learning steps into a pipeline that performs feature selection/engineering, model training, model evaluation, and model storage.
 
-### Phase 4 (OPTIONAL)
 
-At this point, you should have a clear idea of where you want to go. You should spend the remaining days refining your machine learning models and your presentation. Spend some time to get a deeper understanding of the algorithms or statistical methods you are using and how your work could be improved. Think about how you can best present your project to a wide audience so that they take away what the essence of your project is.
+### Phase 4
 
-ML:
-
-* Continue iterating on your machine learning models with the objective of optimizing their performance.
-* Organize your machine learning steps into a pipeline that performs feature selection/engineering, model training, model evaluation, and model storage.
-* Further refine your presentation based on additional findings and results.
-
-Analysis:
+Think about how you can best present your project to a wide audience so that they take away what the essence of your project is.
 
 * Create stories around your key points
 * Pick the most suitable visualizations to support your stories
 * Identify easy-to-grasp examples to put your findings in perspective
+* Always think about your audience: which problem are you looking at? What did you learn during your analysis? What should they take away from it?
 
 ## Necessary Deliverables
 
@@ -251,9 +236,7 @@ The following deliverables should be pushed to your Github repo.
 ### Outputs
 
 * A presentation in Google Slides
-* A demo deployed on GitHub Pages (ML app)
-* The presentation and demo will be executed on a class computer (instead of your own)
-* Get ready to explain some of your code in GitHub
+* Your Github repo
 
 ### Things you might want to talk about
 
